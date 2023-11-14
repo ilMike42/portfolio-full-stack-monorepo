@@ -53,7 +53,8 @@
           "buildTarget": "angular-frontend:build:production"
         },
         "development": {
-          "buildTarget": "angular-frontend:build:development"
+          "buildTarget": "angular-frontend:build:development",
+          "port": 4201
         }
       },
       "defaultConfiguration": "development"

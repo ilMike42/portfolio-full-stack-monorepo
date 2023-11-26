@@ -27,6 +27,7 @@
       "configurations": {
         "development": {},
         "production": {
+          "assets": ["apps/fastify-backend/src/assets", "apps/fastify-backend/src/fly.toml"],
           "esbuildOptions": {
             "sourcemap": false,
             "outExtension": {
@@ -64,6 +65,17 @@
       "options": {
         "jestConfig": "apps/fastify-backend/jest.config.ts"
       }
+    },
+    "deploy": {
+      "executor": "@portfolio-full-stack-monorepo/internal-plugin:fly-deploy",
+      "outputs": [],
+      "options": {
+        "distLocation": "dist/apps/fastify-backend",
+        "flyAppName": "fastify-backend"
+      },
+      "dependsOn": [
+        { "target": "build", "projects": "self", "params": "forward" }
+      ]
     }
   },
   "tags": []

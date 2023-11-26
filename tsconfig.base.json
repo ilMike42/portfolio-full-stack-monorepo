@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@portfolio-full-stack-monorepo/internal-plugin": [
+        "libs/internal-plugin/src/index.ts"
+      ],
       "@portfolio-full-stack-monorepo/shared-ui": [
         "libs/shared-ui/src/index.ts"
       ]

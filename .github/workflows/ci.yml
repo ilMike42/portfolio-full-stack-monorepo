@@ -38,5 +38,4 @@ jobs:
       # - run: pnpm dlx nx format:check
       - run: pnpm dlx nx affected -t deploy
         env:
-          HOST: 0.0.0.0
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

@@ -5,12 +5,12 @@ export default async function runExecutor(
   options: FlyDeployExecutorSchema
 ) {
   const cwd = options.distLocation;
-  const results = execSync(`fly apps list`);
+  const results = execSync(`flyctl apps list`);
   if (results.toString().includes(options.flyAppName)) {    
-    execSync(`fly deploy -c src/fly.toml`, { cwd });
+    execSync(`flyctl deploy -c src/fly.toml`, { cwd });
   } else {
     // consult https://fly.io/docs/reference/regions/ to get best region for you
-    execSync(`fly launch --now --name=${options.flyAppName} --region=mad`, {
+    execSync(`flyctl launch --now --name=${options.flyAppName} --region=mad`, {
       cwd,
     });
   }

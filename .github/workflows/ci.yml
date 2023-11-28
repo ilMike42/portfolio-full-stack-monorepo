@@ -8,13 +8,15 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
+    env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       # Install Pnpm
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.2.1
+        uses: pnpm/action-setup@v2
         with:
           version: "7.x"
       # Cache node_modules
@@ -36,6 +38,4 @@ jobs:
       # - run: git branch --track main origin/main
 
       # - run: pnpm dlx nx format:check
-      - run: pnpm dlx nx affected -t deploy
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      - run: pnpm dlx nx affected -t deploy # TODO: add linter, tests

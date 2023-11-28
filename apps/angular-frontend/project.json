@@ -24,6 +24,12 @@
       },
       "configurations": {
         "production": {
+          "assets": [
+            "apps/angular-frontend/src/favicon.ico",
+            "apps/angular-frontend/src/assets",
+            { "glob": "fly.toml", "input": "apps/angular-frontend/src/.fly", "output": "."},
+            { "glob": "Dockerfile", "input": "apps/angular-frontend/src/.fly", "output": "."}
+          ],
           "budgets": [
             {
               "type": "initial",
@@ -81,6 +87,21 @@
       "options": {
         "jestConfig": "apps/angular-frontend/jest.config.ts"
       }
+    },
+    "deploy": {
+      "executor": "@portfolio-full-stack-monorepo/internal-plugin:fly-deploy",
+      "outputs": [],
+      "options": {
+        "distLocation": "dist/apps/angular-frontend/browser",
+        "flyAppName": "angular-frontend"
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "self",
+          "params": "forward"
+        }
+      ]
     }
   }
 }

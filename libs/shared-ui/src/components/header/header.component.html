@@ -1,1 +1,12 @@
-<p>header works!</p>
+<header class="pt-4 px-4 mb-4 sticky top-0 z-50 bg-base-100">
+  <div class="navbar bg-primary text-primary-content rounded-box">
+    <div class="navbar-start">
+      <button [routerLink]="['/']" routerLinkActive="router-link-active"  class="btn btn-ghost text-xl">ilMike</button>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <button [routerLink]="['/timeline']" routerLinkActive="btn-active"  class="btn btn-ghost text-xl">timeline</button>
+    </div>
+    <div class="navbar-end">
+    </div>
+  </div>
+</header>

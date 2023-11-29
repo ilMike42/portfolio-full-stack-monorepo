@@ -1,6 +1,6 @@
-<select [formControl]="themeSelector" class="select select-primary w-full">
-  <option disabled selected>What is the best TV show?</option>
-  <option [ngValue]="DaisyUITheme.dark">Dark</option>
-  <option [ngValue]="DaisyUITheme.cupcake">cupcake</option>
-  <option [ngValue]="DaisyUITheme.cyberpunk">cyberpunk</option>
+<select [formControl]="themeSelector" class="select select-ghost w-full">
+  <option disabled selected>Select theme</option>
+  @for (item of themes; track $index) {
+    <option [ngValue]="item">{{getLabelFor(item)}}</option>
+  }
 </select>

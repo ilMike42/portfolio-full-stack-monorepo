@@ -45,11 +45,11 @@ export default fastifyPlugin(async function (fastify: FastifyInstance) {
     try {
       jsonResponse = JSON.parse(responseFromAssist.content);
     } catch (error) {
-      return 'error';
+      return 'error'; // TODO: handle better this error
     }
 
     if (!jsonResponse) {
-      return 'error';
+      return 'error'; // TODO: handle better this error
     }
 
     if (jsonResponse['image_context']) {

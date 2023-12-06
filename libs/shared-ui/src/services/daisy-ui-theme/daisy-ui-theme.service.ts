@@ -3,7 +3,9 @@ import { Injectable, WritableSignal, computed, signal } from '@angular/core';
 export enum DaisyUITheme {
   dark = 'dark',
   cupcake = 'cupcake',
-  cyberpunk = 'cyberpunk'
+  cyberpunk = 'cyberpunk',
+  synthwave = 'synthwave',
+  night = 'night',
 }
 
 export interface DaisyUiThemeState {
@@ -38,7 +40,7 @@ export class DaisyUiThemeService {
 
   #getThemeFrom(stringValue: string | null): DaisyUITheme {
     if( !this.#isValidTheme(stringValue) ) {
-      return DaisyUITheme.dark
+      return DaisyUITheme.synthwave
     }
 
     return stringValue as DaisyUITheme;

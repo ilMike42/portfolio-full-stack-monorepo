@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeSelectorComponent } from '@portfolio-full-stack-monorepo/shared-ui';
+import { TimelineService } from './services/timeline.service';
 
 @Component({
   selector: 'portfolio-full-stack-monorepo-timeline',
@@ -10,6 +11,5 @@ import { ThemeSelectorComponent } from '@portfolio-full-stack-monorepo/shared-ui
   styleUrls: ['./timeline.component.css'],
 })
 export class TimelineComponent {
-  
-  
+  timelineService = inject(TimelineService)
 }

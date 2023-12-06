@@ -1,13 +1,17 @@
 <div class="hero min-h-screen">
   <div class="hero-content flex-col lg:flex-row-reverse">
-    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" class="max-w-sm rounded-lg shadow-2xl" />
+    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="my profile picture" class="max-w-sm rounded-lg shadow-2xl" />
     <div>
       <h1 class="text-5xl font-bold">Hello there!</h1>
       <p class="py-6">As a frontend developer with a primary focus on mobile development transitioning towards full stack applications, my role involves crafting and implementing engaging and functional user interfaces for software applications. I design and develop visual components, integrate backend logic, and collaborate with cross-functional teams to ensure an optimal user experience across various platforms.</p>
       
       <div class="w-full flex flex-row-reverse">
-        <button [routerLink]="['/timeline']"  class="btn btn-primary place-content-center">Check my experience</button>
+        <button (click)="scrollTo(timeline, 80)"  class="btn btn-primary place-content-center">Check my experience</button>
       </div>
     </div>
   </div>
+</div>
+
+<div class="px-10" #timeline>
+  <portfolio-full-stack-monorepo-timeline></portfolio-full-stack-monorepo-timeline>
 </div>

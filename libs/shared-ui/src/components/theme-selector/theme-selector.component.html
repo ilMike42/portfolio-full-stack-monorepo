@@ -1,4 +1,5 @@
-<select [formControl]="themeSelector" class="select select-ghost w-full">
+
+<select [formControl]="themeSelector" class="select select-ghost w-full" aria-label="Theme selector">
   <option disabled selected>Select theme</option>
   @for (item of themes; track $index) {
     <option [ngValue]="item">{{getLabelFor(item)}}</option>

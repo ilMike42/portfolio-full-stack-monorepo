@@ -1,21 +1,42 @@
-<ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-  @for (item of timelineService.timelineItems(); track $index) {
-    <li>
-      <div class="timeline-middle">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-          <path fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-            clip-rule="evenodd" />
-        </svg>
+@for (section of timelineService.timelineSections(); track section.title) {
+<div class="flex max-w-full items-center justify-center">
+  <div class="prose prose-sm md:prose-base max-w-7xl flex-grow pt-10">
+    @if (section.title) {
+      <h1>{{section.title}}</h1>
+    }
+
+    @for (subsection of section.subSections; track $index) {
+      <div class="flex gap-2">
+        @for (tag of subsection.tags; track $index) {
+          <div [ngClass]="{'badge-secondary': $index === 0, 'badge-accent': $index === 1, 'badge-primary': $index === 2}"
+            class="badge badge-lg">{{tag}}</div>
+          }
       </div>
-      <div [ngClass]="{'timeline-start md:text-end': $index % 2 === 0, 'timeline-end': $index % 2 !== 0}" class="mb-10">
-        <time class="font-mono italic">{{item.year}}</time>
-        <div class="text-lg font-black">{{item.title}}</div>
-        {{item.description}}
-      </div>
-      @if ($index < timelineService.timelineItems().length - 1) {
+    
+
+    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical not-prose">
+      @for (item of subsection.items; track $index) {
+      <li>
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div [ngClass]="{'timeline-start md:text-end': $index % 2 === 0, 'timeline-end': $index % 2 !== 0}"
+          class="mb-10">
+          <!-- <time class="font-mono italic">{{item.year}}</time> -->
+          <div class="text-lg font-black">{{item.title}}</div>
+          {{item.description}}
+        </div>
+        @if ($index !== subsection.items.length - 1) {
         <hr />
+        }
+      </li>
       }
-    </li>
-  }
-</ul>
+    </ul>
+    }
+  </div>
+</div>
+}

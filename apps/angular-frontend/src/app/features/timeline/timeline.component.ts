@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeSelectorComponent } from '@portfolio-full-stack-monorepo/shared-ui';
 import { TimelineService } from './services/timeline.service';
@@ -10,11 +10,6 @@ import { TimelineService } from './services/timeline.service';
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.css'],
 })
-export class TimelineComponent implements OnInit {
+export class TimelineComponent {
   timelineService = inject(TimelineService)
-  
-  ngOnInit(): void {
-      console.log();
-      
-  }
 }

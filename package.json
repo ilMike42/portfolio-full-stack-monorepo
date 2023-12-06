@@ -16,6 +16,7 @@
     "@fastify/autoload": "~5.7.1",
     "@fastify/mongodb": "^8.0.0",
     "@fastify/sensible": "~5.2.0",
+    "@ngneat/transloco": "^6.0.1",
     "@nx/angular": "17.1.2",
     "@swc/helpers": "~0.5.2",
     "axios": "^1.0.0",

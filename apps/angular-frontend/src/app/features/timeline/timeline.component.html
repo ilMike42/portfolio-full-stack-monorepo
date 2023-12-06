@@ -26,7 +26,9 @@
         </div>
         <div [ngClass]="{'timeline-start md:text-end': $index % 2 === 0, 'timeline-end': $index % 2 !== 0}"
           class="mb-10">
-          <!-- <time class="font-mono italic">{{item.year}}</time> -->
+          @if (item.year) {
+            <time class="font-mono italic">{{item.year}}</time>
+          }
           <div class="text-lg font-black">{{item.title}}</div>
           {{item.description}}
         </div>

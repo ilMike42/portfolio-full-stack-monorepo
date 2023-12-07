@@ -8,24 +8,23 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/angular-frontend",
         "index": "apps/angular-frontend/src/index.html",
         "browser": "apps/angular-frontend/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/angular-frontend/tsconfig.app.json",
         "assets": [
           "apps/angular-frontend/src/favicon.ico",
-          "apps/angular-frontend/src/assets"
+          "apps/angular-frontend/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/shared-ui/src/assets/",
+            "output": "/assets/"
+          }
         ],
-        "styles": [
-          "apps/angular-frontend/src/styles.css"
-        ],
+        "styles": ["apps/angular-frontend/src/styles.css"],
         "scripts": []
       },
       "configurations": {
@@ -33,6 +32,11 @@
           "assets": [
             "apps/angular-frontend/src/favicon.ico",
             "apps/angular-frontend/src/assets",
+            {
+              "glob": "**/*",
+              "input": "libs/shared-ui/src/assets/",
+              "output": "/assets/"
+            },
             {
               "glob": "fly.toml",
               "input": "apps/angular-frontend/src/.fly",
@@ -99,9 +103,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/angular-frontend/**/*.ts",
@@ -111,9 +113,7 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/angular-frontend/jest.config.ts"
       }

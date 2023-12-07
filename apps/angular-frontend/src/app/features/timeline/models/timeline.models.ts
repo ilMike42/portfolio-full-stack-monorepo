@@ -1,4 +1,5 @@
 export interface TimelineState {
+  isLoading: boolean,
   timelineSections: TimelineSection[]
 }
 

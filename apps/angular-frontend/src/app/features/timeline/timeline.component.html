@@ -1,22 +1,30 @@
+@if (timelineService.isLoading()) {
+<div class="pt-10">
+  <portfolio-full-stack-monorepo-timeline-placeholder></portfolio-full-stack-monorepo-timeline-placeholder>
+</div>
+} @else {
 @for (section of timelineService.timelineSections(); track section.title) {
 <div class="flex max-w-full items-center justify-center">
   <div class="prose prose-sm md:prose-base max-w-7xl flex-grow pt-10">
     @if (section.title) {
-      <h1>{{section.title}}</h1>
+    <h1>{{section.title}}</h1>
     }
 
     @for (subsection of section.subSections; track $index) {
-      <div class="flex gap-2">
-        @for (tag of subsection.tags; track $index) {
-          <div [ngClass]="{'badge-secondary': $index === 0, 'badge-accent': $index === 1, 'badge-primary': $index === 2}"
-            class="badge badge-lg">{{tag}}</div>
-          }
-      </div>
-    
+    <div class="flex gap-2">
+      @for (tag of subsection.tags; track $index) {
+      <div [ngClass]="{'badge-secondary': $index === 0, 'badge-accent': $index === 1, 'badge-primary': $index === 2}"
+        class="badge badge-lg">{{tag}}</div>
+      }
+    </div>
 
-    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical not-prose">
+
+    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical not-prose pt-4">
       @for (item of subsection.items; track $index) {
       <li>
+        @if ($index === subsection.items.length - 1) {
+          <hr />
+          }
         <div class="timeline-middle">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
             <path fill-rule="evenodd"
@@ -27,7 +35,7 @@
         <div [ngClass]="{'timeline-start md:text-end': $index % 2 === 0, 'timeline-end': $index % 2 !== 0}"
           class="mb-10">
           @if (item.year) {
-            <time class="font-mono italic">{{item.year}}</time>
+          <time class="font-mono italic">{{item.year}}</time>
           }
           <div class="text-lg font-black">{{item.title}}</div>
           {{item.description}}
@@ -41,4 +49,5 @@
     }
   </div>
 </div>
+}
 }

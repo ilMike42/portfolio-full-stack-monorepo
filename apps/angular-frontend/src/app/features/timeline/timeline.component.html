@@ -11,7 +11,7 @@
     }
 
     @for (subsection of section.subSections; track $index) {
-    <div class="flex gap-2">
+    <div class="flex gap-2 pt-2">
       @for (tag of subsection.tags; track $index) {
       <div [ngClass]="{'badge-secondary': $index === 0, 'badge-accent': $index === 1, 'badge-primary': $index === 2}"
         class="badge badge-lg">{{tag}}</div>
@@ -19,7 +19,7 @@
     </div>
 
 
-    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical not-prose pt-4">
+    <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical not-prose mt-5">
       @for (item of subsection.items; track $index) {
       <li>
         @if ($index === subsection.items.length - 1) {

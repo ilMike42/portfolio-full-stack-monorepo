@@ -1,7 +1,9 @@
-
-<select [formControl]="themeSelector" class="select select-ghost w-full" aria-label="Theme selector">
-  <option disabled selected>Select theme</option>
-  @for (item of themes; track $index) {
+<div class="flex gap-2">
+  <img src="assets/icons/fa-half-circle-stroke.svg" alt="theme-selector-icon">
+  <select [formControl]="themeSelector" class="select select-ghost w-full" aria-label="Theme selector">
+    <option disabled selected>Select theme</option>
+    @for (item of themes; track $index) {
     <option [ngValue]="item">{{getLabelFor(item)}}</option>
-  }
-</select>
+    }
+  </select>
+</div>

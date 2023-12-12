@@ -1,0 +1,84 @@
+<div class="hero min-h-screen pb-20 px-10">
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <img src="assets/propic.jpeg" alt="my profile picture" class="max-w-xs rounded-lg shadow-2xl" />
+    <div class="prose">
+      <h1>Hello there! I'm Michael.</h1>
+      <p class="italic font-semibold">I consider myself a pragmatic programmer <a
+          href="https://en.wikipedia.org/wiki/The_Pragmatic_Programmer" target="_blank">[cit.]</a></p>
+      <p>I have always been a very curious person, which leads me to have a wide range of knowledge and constantly seek
+        improvements, both in my professional and personal life.</p>
+
+      <div class="w-full flex flex-row-reverse">
+        <button (click)="scrollTo(timeline, 80)" class="btn btn-primary place-content-center">Check my
+          experience</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="px-10" #timeline>
+  @defer (on viewport) {
+  <portfolio-full-stack-monorepo-timeline></portfolio-full-stack-monorepo-timeline>
+  } @placeholder {
+  <portfolio-full-stack-monorepo-timeline-placeholder></portfolio-full-stack-monorepo-timeline-placeholder>
+  }
+</div>
+<div class="flex justify-center">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-7xl">
+    <div class="card bg-base-100 image-full shadow-xl">
+      <figure class="max-h-sm"><img
+          src="https://images.unsplash.com/photo-1602407294553-6ac9170b3ed0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=joao-ferrao-4YzrcDNcRVg-unsplash.jpg"
+          alt="" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Want to check my curriculum?</h2>
+        <p>Download it!</p>
+        <div class="card-actions justify-end">
+          <a href="https://github.com/ilMike42/curriculum_vitae_EN/releases/latest" target="_blank" class="btn btn-accent">
+            <img src="assets/icons/fa-download.svg" alt="">
+            Download Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 image-full shadow-xl">
+      <figure class="max-h-sm"><img
+          src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=yancy-min-842ofHC6MaI-unsplash.jpg"
+          alt="" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">Want to see how I code?</h2>
+        <p>Check the source of this project!</p>
+        <div class="card-actions justify-end">
+          <a href="https://github.com/ilMike42/portfolio-full-stack-monorepo" class="btn btn-accent">
+            <img src="assets/icons/fa-github.svg" alt="">
+            Go to Github repository
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card bg-base-100 image-full shadow-xl">
+      <figure class="max-h-sm"><img
+          src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=austin-distel-gUIJ0YszPig-unsplash.jpg"
+          alt="" /></figure>
+      <div class="card-body">
+        <h2 class="card-title">
+          Want to contact me?
+        </h2>
+        <p>Click on the button to open the source of this site</p>
+        <div class="card-actions justify-end">
+          <a class="btn btn-accent" href="tel:+393409675287">
+            <img src="assets/icons/fa-phone.svg" alt="">
+            Call me
+          </a>
+          <a class="btn btn-accent" href="mailto:michael.planu@icloud.com">
+            <img src="assets/icons/fa-envelope.svg" alt="">
+            Email me
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -38,7 +38,8 @@
           <time class="font-mono italic">{{item.year}}</time>
           }
           <div class="text-lg font-black">{{item.title}}</div>
-          {{item.description}}
+          <p [innerText]="item.description">
+          </p>
         </div>
         @if ($index !== subsection.items.length - 1) {
         <hr />

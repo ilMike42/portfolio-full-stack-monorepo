@@ -37,4 +37,7 @@ jobs:
       # - run: git branch --track main origin/main
 
       # - run: pnpm dlx nx format:check
-      - run: pnpm dlx nx affected -t deploy # TODO: add linter, tests
+      - env:
+          CI: true
+          MONGO_URL: ${{ secrets.MONGO_URL }}
+        run: pnpm dlx nx affected -t deploy # TODO: add linter, tests

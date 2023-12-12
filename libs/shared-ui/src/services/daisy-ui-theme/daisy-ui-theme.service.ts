@@ -6,6 +6,7 @@ export enum DaisyUITheme {
   cyberpunk = 'cyberpunk',
   synthwave = 'synthwave',
   night = 'night',
+  retro = 'retro'
 }
 
 export interface DaisyUiThemeState {

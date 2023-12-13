@@ -41,7 +41,7 @@ export class DaisyUiThemeService {
 
   #getThemeFrom(stringValue: string | null): DaisyUITheme {
     if( !this.#isValidTheme(stringValue) ) {
-      return DaisyUITheme.synthwave
+      return DaisyUITheme.retro
     }
 
     return stringValue as DaisyUITheme;

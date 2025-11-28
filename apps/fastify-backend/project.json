@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/fastify-backend/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/esbuild:esbuild",
@@ -27,7 +28,14 @@
       "configurations": {
         "development": {},
         "production": {
-          "assets": ["apps/fastify-backend/src/assets", { "glob": "fly.toml", "input": "apps/fastify-backend/src", "output": "."}],
+          "assets": [
+            "apps/fastify-backend/src/assets",
+            {
+              "glob": "fly.toml",
+              "input": "apps/fastify-backend/src",
+              "output": "."
+            }
+          ],
           "esbuildOptions": {
             "sourcemap": false,
             "outExtension": {
@@ -74,9 +82,12 @@
         "flyAppName": "fastify-backend"
       },
       "dependsOn": [
-        { "target": "build", "projects": "self", "params": "forward" }
+        {
+          "target": "build",
+          "projects": "self",
+          "params": "forward"
+        }
       ]
     }
-  },
-  "tags": []
+  }
 }

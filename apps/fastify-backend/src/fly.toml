@@ -8,6 +8,7 @@ processes = []
 
 [env]
   PORT = "8080"
+  BP_NODE_VERSION="20.19.6"
 
 [experimental]
   cmd = ["node main.js"]

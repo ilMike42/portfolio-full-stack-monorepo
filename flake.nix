@@ -24,6 +24,7 @@
             nodejs
             pkgs.pnpm         # or pkgs.yarn / pkgs.nodePackages.npm
             pkgs.watchman     # optional: improves Nx file watching
+            pkgs.flyctl
           ];
 
           # Add Nx to PATH using pnpm or npm install
@@ -35,6 +36,8 @@
 
             export PATH="$PWD/node_modules/.bin:$PATH"
             echo "Node version: $(node -v)"
+
+            exec zsh
           '';
         };
 

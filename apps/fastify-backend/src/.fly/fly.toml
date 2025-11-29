@@ -1,17 +1,12 @@
 app = "fastify-backend"
 kill_signal = "SIGINT"
 kill_timeout = 5
-processes = []
 
 [build]
-  builder = "paketobuildpacks/builder:base"
+  dockerfile="Dockerfile"
 
 [env]
   PORT = "8080"
-  BP_NODE_VERSION="20.19.6"
-
-[experimental]
-  cmd = ["node main.js"]
 
 [[services]]
   http_checks = []
@@ -19,6 +14,7 @@ processes = []
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
+
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20

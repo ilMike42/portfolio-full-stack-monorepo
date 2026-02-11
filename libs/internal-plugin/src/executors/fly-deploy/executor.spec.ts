@@ -1,8 +1,6 @@
 import { FlyDeployExecutorSchema } from './schema';
 import executor from './executor';
-
 const options: FlyDeployExecutorSchema = {};
-
 describe('FlyDeploy Executor', () => {
   it('can run', async () => {
     const output = await executor(options);

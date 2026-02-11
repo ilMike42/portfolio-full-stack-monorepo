@@ -1,18 +1,13 @@
 // import { TestBed } from '@angular/core/testing';
 // import { AppComponent } from './app.component';
 // import { RouterTestingModule } from '@angular/router/testing';
-
-
-  // OLD CODE - Keeping for reference
+// OLD CODE - Keeping for reference
 // describe('AppComponent', () => {
-
-
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
 //       imports: [AppComponent, RouterTestingModule],
 //     }).compileComponents();
 //   });
-
 //   it('should render title', () => {
 //     const fixture = TestBed.createComponent(AppComponent);
 //     fixture.detectChanges();
@@ -21,7 +16,6 @@
 //       'Welcome angular-frontend'
 //     );
 //   });
-
 //   it(`should have as title 'angular-frontend'`, () => {
 //     const fixture = TestBed.createComponent(AppComponent);
 //     const app = fixture.componentInstance;

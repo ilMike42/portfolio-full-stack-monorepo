@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, effect, inject } from '@angular/core';
+
+import { Component, Inject, effect, inject, DOCUMENT } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DaisyUiThemeService, FooterComponent, HeaderComponent } from '@portfolio-full-stack-monorepo/shared-ui';
 import { environment } from '../environments/environment';

@@ -1,4 +1,4 @@
-/* eslint-disable */
+// /* eslint-disable */
 export default {
   displayName: 'fastify-backend',
   preset: '../../jest.preset.js',

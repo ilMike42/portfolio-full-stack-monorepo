@@ -1,35 +1,26 @@
-<div class="hover-3d">
+<div class="hover-3d shadow-2xl rounded-2xl">
   <!-- content -->
-  <div class="flex flex-col gap-4 px-6 py-3 max-w-100 rounded-2xl bg-secondary">
-    <div class="flex justify-between max-h-4">
-      <div class="flex items-center gap-2 h-full">
-        <img src="assets/icons/fa-music.svg" alt="" class="h-full">
-        <h1 class="text-secondary-content"><strong>Actual obsession</strong></h1>
-      </div>
-
-      <div class="flex gap-1">
-        <img src="assets/icons/fa-play.svg" height="24px">
-        <p class="text-sm text-secondary-content">{{trackCount()}}</p>
-      </div>
-    </div>
+  <div class="flex flex-col gap-2 px-6 pt-3 max-w-100 rounded-2xl bg-secondary">
     <div class="flex items-center gap-3">
+      @let art = albumArtUrl();
+      @if (art) {
       <div>
-        @let art = albumArtUrl();
-        @if (art) {
-        <div>
-          <img [ngSrc]="art" width="70" height="70" priority>
-        </div>
-        }
+        <img [ngSrc]="art" width="70" height="70" priority>
       </div>
-      <div class="">
+      }
+      <div>
         <p class="text-secondary-content"><strong>{{title()}}</strong></p>
         <p class="text-sm text-secondary-content">{{artist()}}</p>
-        <div class="flex gap-3">
-          <p class="text-sm text-secondary-content">{{album()}}</p>
-        </div>
+        <p class="text-sm text-secondary-content">{{album()}}</p>
       </div>
     </div>
-
+    <div class="-mx-6 px-6 py-1.5 flex justify-center bg-primary rounded-b-2xl">
+      <div class="flex items-center gap-3">
+        <img src="assets/icons/fa-music.svg" alt="" class="h-5">
+        <p class="text-primary-content"><strong>Actual obsession</strong></p>
+        <div class="badge badge-sm badge-info">+{{trackCount()}}</div>
+      </div>
+    </div>
   </div>
   <!-- 8 empty divs needed for the 3D effect -->
   <div></div>

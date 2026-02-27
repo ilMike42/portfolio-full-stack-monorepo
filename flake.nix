@@ -6,8 +6,14 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = import nixpkgs {
           inherit system;
@@ -22,8 +28,8 @@
 
           buildInputs = [
             nodejs
-            pkgs.pnpm         # or pkgs.yarn / pkgs.nodePackages.npm
-            pkgs.watchman     # optional: improves Nx file watching
+            pkgs.pnpm # or pkgs.yarn / pkgs.nodePackages.npm
+            pkgs.watchman # optional: improves Nx file watching
             pkgs.flyctl
           ];
 
@@ -36,8 +42,6 @@
 
             export PATH="$PWD/node_modules/.bin:$PATH"
             echo "Node version: $(node -v)"
-
-            exec zsh
           '';
         };
 
@@ -61,6 +65,6 @@
             cp -r dist/* $out/
           '';
         };
-      });
+      }
+    );
 }
-

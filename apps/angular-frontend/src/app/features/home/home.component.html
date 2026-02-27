@@ -1,6 +1,13 @@
+@if(lastfmService.trackInfo()) {
+  <portfolio-full-stack-monorepo-lastfm-card class="fixed bottom-6 left-6 z-50" [title]="lastfmService.trackInfo().title"
+  [artist]="lastfmService.trackInfo().artist" [album]="lastfmService.trackInfo().album" [trackCount]="lastfmService.trackInfo().playCount"
+  [albumArtUrl]="lastfmService.trackInfo().albumArt"></portfolio-full-stack-monorepo-lastfm-card>
+}
+
 <div class="hero min-h-screen pb-20 md:px-10">
   <div class="hero-content flex-col lg:flex-row-reverse lg:gap-16">
-    <img ngSrc="assets/propic.png" alt="my profile picture" class="max-w-xs rounded-lg shadow-2xl" priority width="400" height="200"/>
+    <img ngSrc="assets/propic.png" alt="my profile picture" class="max-w-xs rounded-lg shadow-2xl" priority width="400"
+      height="200" />
     <div class="prose">
       <h1>Hello there! I'm Michael.</h1>
       <p class="italic font-semibold">I consider myself a pragmatic programmer <a
@@ -15,7 +22,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="px-10" #timeline>
   @defer (on viewport) {
@@ -34,7 +40,8 @@
         <h2 class="card-title">Want to check my curriculum?</h2>
         <p>Download it!</p>
         <div class="card-actions justify-end">
-          <a href="https://github.com/ilMike42/curriculum_vitae_EN/releases/download/0.1.2/curriculum.pdf" target="_blank" class="btn btn-accent">
+          <a href="https://github.com/ilMike42/curriculum_vitae_EN/releases/download/0.1.2/curriculum.pdf"
+            target="_blank" class="btn btn-accent">
             <img src="assets/icons/fa-download.svg" alt="">
             Download Now
           </a>

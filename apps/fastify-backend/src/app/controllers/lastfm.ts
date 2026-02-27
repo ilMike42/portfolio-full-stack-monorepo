@@ -19,15 +19,16 @@ const getLastFMTopTrackController = async (req: FastifyRequest) => {
   const data = await res.json();
   const track = data["toptracks"]["track"][0];
 
-  const trackInfo = await _getTrackInfo(track.mbid);
-  
+  const trackInfo = await _getTrackInfo(track.mbid); 
+  const myTrack = mapLastFmTrack(track); 
   const mappedTrack = mapLastFmTrack(trackInfo);
 
   return {
     title: mappedTrack.title,
     artist: mappedTrack.artist.name,
     album: mappedTrack.album.title,
-    albumArt: mappedTrack.album.images.medium
+    albumArt: mappedTrack.album.images.medium,
+    playCount: myTrack.playcount
   };
 }
 

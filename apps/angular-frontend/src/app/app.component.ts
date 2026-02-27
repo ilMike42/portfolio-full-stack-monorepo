@@ -25,10 +25,7 @@ export class AppComponent {
   public constructor(@Inject(DOCUMENT) doc: Document) {
     effect(() => {
       doc.documentElement.setAttribute('data-theme', this.themeService.theme());
-    })
-
-    console.log(environment.BASE_URL);
-    
+    })    
   }
 
 }
